@@ -1,0 +1,2 @@
+# knowledge-base-assistant
+这是一个基于langchain和langgragh基于deepseek大模型构建的知识库笔记助手。它能够读取学习我们日常的笔记，可以利用大模型能力回复我们的问题，同时具备一定的记忆功能。
