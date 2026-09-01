@@ -1,5 +1,4 @@
 from langchain.agents import create_agent
-from .config import *
 from .memory import *
 from .tools import *
 

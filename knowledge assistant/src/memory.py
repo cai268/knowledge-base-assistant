@@ -5,7 +5,7 @@ from langchain.agents.middleware import SummarizationMiddleware
 
 
 # 这里指定记忆缓存的位置
-connection = sqlite3.connect("./SQlite/checkpoint.db",check_same_thread=False)
+connection = sqlite3.connect("./storage/SQlite/checkpoint.db",check_same_thread=False)
 checkpointer = SqliteSaver(connection)# 初始化checkpointer
 checkpointer.setup()
 

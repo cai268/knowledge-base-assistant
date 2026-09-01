@@ -3,7 +3,7 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_chroma import Chroma
 
-PERSIST_DIR = "./local_doc_db"
+PERSIST_DIR = "./data/local_doc_db"
 
 def build_doc_kb(file_path: str):
     # 加载文档
@@ -35,4 +35,4 @@ def build_doc_kb(file_path: str):
 
 
 if __name__ == "__main__":
-    build_doc_kb("./data/你的文件")
+    build_doc_kb("./data/计算机知识.txt")
