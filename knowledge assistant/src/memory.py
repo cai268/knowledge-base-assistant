@@ -2,10 +2,11 @@ import sqlite3
 from langgraph.checkpoint.sqlite import SqliteSaver
 from datetime import datetime,timedelta
 from langchain.agents.middleware import SummarizationMiddleware
+from .config import *
 
 
 # 这里指定记忆缓存的位置
-connection = sqlite3.connect("./storage/SQlite/checkpoint.db",check_same_thread=False)
+connection = sqlite3.connect("./storage/checkpoint.db",check_same_thread=False)
 checkpointer = SqliteSaver(connection)# 初始化checkpointer
 checkpointer.setup()
 
@@ -30,9 +31,8 @@ def clean_thread(thread_id_to_delete):
         print(f"删除失败: {e}")
 
 
-# 上下文
 middleware = SummarizationMiddleware(
-    model="deepseek-v4-pro",# 让模型自己给超出的文本进行总结
+    model=llm,# 让模型自己给超出的文本进行总结
     trigger=("messages",6),
     keep=("messages",3)
 )

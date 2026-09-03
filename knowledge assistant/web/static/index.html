@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>学习知识助手</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <aside id="sidebar">
+      <div class="brand">
+        <span class="logo">📚</span>
+        <span class="brand-text">学习知识助手</span>
+      </div>
+      <button id="new-chat" class="new-chat" type="button">
+        <span>＋</span> 新对话
+      </button>
+      <div id="history" class="history"></div>
+      <div class="sidebar-footer">基于本地向量资料库检索</div>
+    </aside>
+
+    <main id="main">
+      <header id="header">
+        <div class="session-title">当前对话</div>
+        <div id="status-dot" class="status-dot" title="服务状态未知"></div>
+      </header>
+
+      <section id="chat-area">
+        <div id="welcome" class="welcome">
+          <div class="welcome-icon">📚</div>
+          <h1>学习知识助手</h1>
+          <p>围绕本地资料库回答你的问题，回复会附带检索置信度。</p>
+          <div class="hint">试试问：<button type="button" class="hint-chip" data-q="什么是服务质量">什么是服务质量</button></div>
+        </div>
+        <div id="messages" class="messages"></div>
+      </section>
+
+      <footer id="input-bar">
+        <textarea id="input" rows="1" placeholder="输入你的问题…（Enter 发送，Shift+Enter 换行）"></textarea>
+        <button id="send" type="button" aria-label="发送">➤</button>
+      </footer>
+    </main>
+  </div>
+
+  <div id="toast" class="toast" hidden></div>
+  <script src="app.js"></script>
+</body>
+</html>

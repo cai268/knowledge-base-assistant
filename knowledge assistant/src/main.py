@@ -1,5 +1,8 @@
 from .agent import *
+from .config import *
 from langchain.messages import HumanMessage
+import os
+
 
 if __name__ == "__main__":
     print("学习聊天助手已启动，输入exit退出程序")

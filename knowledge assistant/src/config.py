@@ -1,9 +1,12 @@
 from dotenv import load_dotenv
 from langchain_community.vectorstores import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_openai import ChatOpenAI
+import os
 
 # 加载参数
 load_dotenv()
+print(os.getenv("DEEPSEEK_API_KEY"))
 
 # prompt
 system_prompt = '''
@@ -43,6 +46,13 @@ system_prompt = '''
 - 包含置信度说明（如有）
 - 保持友好、专业的语气
 '''
+
+llm = ChatOpenAI(
+    model="deepseek-v4-pro",
+    openai_api_key=os.getenv("DEEPSEEK_API_KEY"),
+    openai_api_base=os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com/v1"),
+    temperature=0.7,
+)
 
 # 加载向量库
 # 初始化embedding模型
